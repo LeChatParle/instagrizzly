@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :pics
 
   root "pics#index"
+
+  get "new", to: "pics#new"
 end

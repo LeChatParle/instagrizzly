@@ -1,5 +1,5 @@
 class PicsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  #before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @pics = Pic.all.order('created_at DESC')
@@ -11,12 +11,15 @@ class PicsController < ApplicationController
 
   #creates post, and if successfull, goes to post
   def create
-    @pic = Pic.new(pic_params);
+    @pic = Pic.new(pic_params)
 
     if @pic.save
       redirect_to @pic
-    else
-      render 'new'
     end
   end
+
+  private
+    def pic_params
+      params.require(:pic).permit(:title, :description)
+    end
 end
