@@ -1,6 +1,10 @@
+<!--This is the HTML that exists on every page. Yields and ifs posts individual data-->
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="author" content="Jeremy Edwards" >
+		<meta name="description" content="An Instagram clone!" >
+		<meta name="keywords" content="Instagram, pictures, photosharing" >
     <title>Instagrizzly</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +13,19 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand navbar-dark fixed-top bgColorNav overflow-hidden position-fixed m06" id="ebjNav">
+      <div>
+    	   <p><%= link_to "Instagrizzly", root_path, id: "logo", class: "mt-0 pl-0" %></p>
+      </div>
+      <% if true %>
+        <h4><%= link_to "New Pic", root_path, id: "newPost" %></h4>
+        <h4><%= link_to "Logout", root_path, id: "signIn"  %></h4>
+      <% else %>
+        <h4><%= link_to "Sign in", root_path, id: "signIn" %></h4>
+      <% end %>
+    </nav>
+
+    </div>
     <%= yield %>
   </body>
 </html>
