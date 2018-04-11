@@ -4,7 +4,7 @@
   <% @pics.each do |pic| %>
     <div class="postWrapper">
       <h2 class="title"><%= link_to pic.title, pic, class: 'igPic' %></h2>
-      <p class="date"><%= time_ago_in_words(post.created_at) %> ago</p>
+      <p class="date"><%= time_ago_in_words(pic.created_at) %> ago</p>
     </div>
   <% end %>
 </div>

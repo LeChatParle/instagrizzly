@@ -1,4 +1,4 @@
-<%= simple_form_for(@pic, html: {class: "form-horizontal"}) do |f| %>
+<%= simple_form_for(@pic, html: {class: "form-horizontal", multipart: true}) do |f| %>
   <% if @pic.errors.any? %>
     <div id="errors">
       <h2><%= pluralize(@pic.errors.count, "error")  %> stopped this post from saving</h2>
