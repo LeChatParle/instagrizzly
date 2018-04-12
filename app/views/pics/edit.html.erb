@@ -1,6 +1,7 @@
 <div id="mainContent">
-  <h1>Placeholder</h1>
+  <h1 class="title"><%= link_to @pic.title, @pic, class: 'igPicTitle' %></h1>
+  <%= image_tag @pic.image.url, class: "img-fluid shownPic mb-5" %>
 
   <%= render 'form' %>
-  <%= link_to "Cancel", pic_path, class: "btn btn-primary" %>
+  <%= link_to "Cancel", pic_path, class: "btn btn-warning mt-1 mb-5" %>
 </div>

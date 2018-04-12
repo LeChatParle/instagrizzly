@@ -1,14 +1,17 @@
 <div id="mainContent">
-  <h1><%= @pic.title %></h1>
+  <h1 class="title"><%= link_to @pic.title, @pic, class: 'igPicTitle' %></h1>
+  <%= image_tag @pic.image.url, class: "mt-3 mb-3 shownPic" %>
   <p><%= @pic.description %></p>
-  <%= link_to "Edit", edit_pic_path, class: "btn btn-primary" %>
-  <%= link_to "Delete", pic_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+  <% if user_signed_in? %>
+    <%= link_to "Edit", edit_pic_path, class: "btn btn-primary" %>
+    <%= link_to "Delete", pic_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
 
-  <div id="commentsDiv" class="mt-5">
+    <div id="commentsDiv" class="mt-5">
       <h4><%= @pic.comments.count %> Comments</h4>
       <%= render @pic.comments, class: "commentBody" %>
 
       <h4 id="commentForm"> Join the discussion! <h4>
       <%= render "comments/form" %>
     </div>
+  <% end %>
 </div>

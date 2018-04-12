@@ -1,9 +1,8 @@
-<div id="mainContent">
-  <h1>Placeholder</h1>
-
+<div id="mainContent" class="row">
   <% @pics.each do |pic| %>
-    <div class="postWrapper">
-      <h2 class="title"><%= link_to pic.title, pic, class: 'igPic' %></h2>
+    <div class="postWrapper imageBg col-sm-3">
+      <%= link_to (image_tag pic.image.url, class: "pageImages img-fluid") %>
+      <h5 class="title"><%= link_to pic.title, pic, class: 'igPicTitle' %></h5>
       <p class="date"><%= time_ago_in_words(pic.created_at) %> ago</p>
     </div>
   <% end %>
