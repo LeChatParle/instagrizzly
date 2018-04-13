@@ -1,3 +1,4 @@
+@import "font-awesome.css"
 @import "bootstrap"
 
 //CSS that affects the whole site
@@ -64,7 +65,8 @@ body
 #mainContent
 	padding-top: 75px
 	width: 60%
-	margin: auto
+	margin: 0 auto
+	display: block
 
 //Comments
 #commentForm
@@ -75,13 +77,12 @@ body
 
 //Images
 .pageImages
-	width: 200px
+	cursor: default
 
 .imageBg
 	background-color: #FFFFFF
-	border-radius: 25px
 	width: 30%
-	padding: 15px
+	padding: 0 0 0 0
 	margin-right: 65px
 	margin-top: 15px
 
@@ -92,6 +93,15 @@ body
 	&:hover
 		color: inherit
 		text-decoration: none
+		cursor: pointer
 
 .shownPic
 	width: 500px
+	display: block
+	margin: 0 auto
+
+.likeButton
+	text-decoration: none
+	padding-right: 5px
+	&:hover
+		text-decoration: none

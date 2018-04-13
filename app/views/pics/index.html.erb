@@ -1,9 +1,10 @@
-<div id="mainContent" class="row">
-  <% @pics.each do |pic| %>
-    <div class="postWrapper imageBg col-sm-3">
-      <%= link_to (image_tag pic.image.url, class: "pageImages img-fluid") %>
-      <h5 class="title"><%= link_to pic.title, pic, class: 'igPicTitle' %></h5>
-      <p class="date"><%= time_ago_in_words(pic.created_at) %> ago</p>
-    </div>
-  <% end %>
+<div id="mainContent">
+  <div class="row">
+    <% @pics.each do |pic| %>
+      <div class="postWrapper imageBg mx-auto col-xs-4">
+        <%= link_to (image_tag pic.image, class: "pageImages img-fluid") %>
+        <p class="title ml-1 text-center"><%= link_to pic.title, pic, class: 'igPicTitle' %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
